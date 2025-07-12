@@ -1,0 +1,166 @@
+:root {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --cell-bg: #1f1f1f;
+  --cell-hover: #333333;
+  --highlight-color: #00c853;
+  --button-bg: #00c6ff;
+  --button-hover: #007eaa;
+  --white-bg: #ffffff;
+}
+
+body.light {
+  --bg-color: #f0f8ff;
+  --text-color: #111;
+  --cell-bg: #dceffd;
+  --cell-hover: #c2e0ff;
+  --highlight-color: #42a5f5;
+  --button-bg: #42a5f5;
+  --button-hover: #1e88e5;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  margin: 0;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 2.5rem;
+}
+
+.scoreboard {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: var(--cell-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+  background-color: var(--cell-hover);
+}
+
+.cell.win {
+  background-color: var(--highlight-color) !important;
+  color: white;
+}
+
+.info {
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-top: 10px;
+  background-color: var(--button-bg);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Theme toggle switch */
+.toggle-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 28px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #42a5f5;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+#mode-label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.mode-selector {
+  margin: 10px 0;
+  font-size: 1rem;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.mode-selector input {
+  margin-right: 5px;
+}

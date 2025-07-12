@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+
+  <!-- Theme Toggle -->
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle" />
+      <span class="slider round"></span>
+    </label>
+    <span id="mode-label">Dark Mode</span>
+  </div>
+
+  <h1>Tic-Tac-Toe</h1>
+
+  <!-- Game Mode Selector -->
+  <div class="mode-selector">
+    <label><input type="radio" name="game-mode" value="ai" checked /> Person vs AI</label>
+    <label><input type="radio" name="game-mode" value="pvp" /> Person vs Person</label>
+  </div>
+
+  <!-- Scoreboard -->
+  <div class="scoreboard">
+    <p>Score — X: <span id="x-score">0</span> | O: <span id="o-score">0</span></p>
+  </div>
+
+  <!-- Game Grid -->
+  <div id="game-board">
+    <div class="cell" data-index="0"></div>
+    <div class="cell" data-index="1"></div>
+    <div class="cell" data-index="2"></div>
+    <div class="cell" data-index="3"></div>
+    <div class="cell" data-index="4"></div>
+    <div class="cell" data-index="5"></div>
+    <div class="cell" data-index="6"></div>
+    <div class="cell" data-index="7"></div>
+    <div class="cell" data-index="8"></div>
+  </div>
+
+  <!-- Game Status -->
+  <div class="info">
+    <p id="status">Player X's turn</p>
+    <button onclick="resetGame()">Restart</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
